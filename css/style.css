@@ -1,0 +1,168 @@
+body{font-family: 'Fira Sans', sans-serif;
+    overflow-x: hidden; 
+}
+
+head{font-family: 'Fira Sans', sans-serif;
+}
+
+a.navbar-brand{
+    color:teal;
+    font-weight: 500;   
+}
+
+a{
+    color:teal
+}
+
+.navbar-nav>li>a{
+    color:teal;
+    font-weight:400;
+}
+
+.navbar{
+    border-bottom: 3px solid teal;
+}
+
+li.active{
+    background-color:#F6F6F6;
+}
+
+.pdf{
+    opacity: 80%;
+}
+
+.section{
+    color:teal;   
+}
+
+
+.date{
+    margin-top:3px;
+    font-weight: 200;
+    margin-bottom:3px;
+   
+}
+
+.job{
+    font-weight:500;
+    font-size: 18px;
+    margin-bottom:3px;
+       
+}
+
+.loc{
+    font-size: 16px;
+    font-style:italic;
+    
+}
+
+ul{
+    padding-left: 50px ;
+}
+
+li>p{
+    font-weight: 400;
+    font-size:16px;
+    line-height: 25px;
+    margin-bottom:3px; 
+}
+
+.footer{
+    position:fixed;
+    bottom: 0;
+}
+
+.iframe{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom:20px;
+}
+
+.portfolio-item{
+    padding: 10px;
+}
+
+.img-responsive{
+    margin: auto;
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.portfolio-item:hover .img-responsive{
+    opacity: 0.3;
+}
+
+.caption{
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.portfolio-item:hover .caption{
+    opacity: 1;
+}
+
+.text {
+    background-color:teal;
+    opacity: .8;
+    color: white;
+    font-size: 18px;
+    padding: 16px 32px;
+  }
+
+.project{
+    color:teal;
+}
+
+  .tools{
+    font-size:16px;
+}
+
+.artist-statement{
+    font-weight: 400;
+    font-size:16px;
+    line-height: 25px;
+}
+
+
+.project-item{
+    padding: 10px;
+}
+
+.img-project-page{
+    margin: auto;
+    opacity: 1;
+    display: block;
+    width: 400px;
+    height: 400px;
+    backface-visibility: hidden;
+}
+
+.foot{
+    margin:auto;
+    padding-left: 50px;
+    font-style: italic;
+    font-size: 16px;
+    opacity: 80%;
+}
+
+.about-me{
+    line-height: 40px;
+    font-size: 24px;
+    
+}
+
+.about-header{
+    color:teal;
+    
+}
