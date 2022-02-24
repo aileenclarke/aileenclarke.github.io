@@ -84,13 +84,13 @@ li>p{
 }
 
 .img-responsive{
-    margin: auto;
+    margin-top: 10px;
     opacity: 1;
     display: block;
-    width: 100%;
-    height: auto;
     transition: .5s ease;
     backface-visibility: hidden;
+    max-height: 100%;
+    max-width: 100%;
 }
 
 .portfolio-item:hover .img-responsive{
