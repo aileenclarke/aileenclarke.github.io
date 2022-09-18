@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        
+        <!--external stylesheets-->
+        <link rel="stylesheet" href="dist/scrollmap.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://use.typekit.net/ahl3tmf.css">
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">        
+        <link rel="stylesheet" href="css/dark-skies.css">
+        <link rel="stylesheet" href="lib/leaflet/leaflet.css">
+        <link rel="stylesheet" href="lib/leaflet-side-by-side-2.0.0/range.css">
+        <link rel="stylesheet" href="lib/leaflet-side-by-side-2.0.0/layout.css">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="dist/leaflet.zoomhome.css"/>
+        
+
+    </head>
+
+    <body>
+        <!--page content-->
+        <div class= "content">
+            <div class= "row no-margin" id ="titleBackground">
+                <img src="img/background3.gif" id="stars">
+                <img src="img/front.png" id="front">
+                <img src="img/middle.png" id="middle">
+                <img src="img/back.png" id="back"> 
+                <div class="center">       
+                    <p class ="titletext" id="opener">Since the dawn of time, humans have spent half their time under skies like these.</h>
+                    <p class ="titletext">But today, 80% of people in North America can't see the Milky Way.</p>
+                    <p class ="titletext">The culprit: nighttime lights that have proliferated since the advent of the lightbulb.</p>
+                    <p class ="titletext" id="closer">In many urban areas, only the brightest dozen stars can be seen, where thousands were once visible. </p>
+                </div>     
+            </div>
+        </div>
+
+        <div>
+            <script type="text/javascript">
+                let stars = document.getElementById("stars");
+                let mtn = document.getElementById("land");
+                let text = document.getElementById("closer");
+                window.addEventListener('scroll', function(){
+                    var value = window.scrollY;
+                    stars.style.top = value * 0.5 + 'px'
+                    middle.style.top = value * 0.47 + 'px'
+                    back.style.top = value * 0.52 + 'px'
+                   // text.style.top = -value * 0.1 + 'px'
+                });
+            </script>
+        </div>
+        
+        <!--scroll content-->
+
+        <div class="content">
+            <div class="row no-margin" id="locAsk">
+                <div class="center">
+                    <p class="vert-center" id="locRequest1">How bright is your neighborhood?</p>
+                    <p class="vert-center" id="locRequest2">Share your location?</p>
+                    <button class="button" class="vert-center" id="buttonYes" onclick="getLocation()">Yes</button>
+                    <button class="button" class="vert-center" id="buttonNo"  onclick="noLocation()">No thanks</button>
+                    <p id="demo"></p>
+                </div>
+            </div>
+           
+            <div class="scroll-container" id="map1 no-margin">
+                <div class="background-item" id="item1">
+                    <div id="locationMap" class="vert-center"></div>
+                </div>
+                <div class="foreground-item no-event">
+                    <div class="row">
+                        <div class="center background-transparent" id="userLoc">
+                            <p class="no-margin">Ninety-nine percent of the continent lives under skies that experience some level of light pollution.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="center background-transparent" id="userCity">
+                            <p class="no-margin"></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="center background-transparent" id="US">
+                            <p class="no-margin"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content">
+                <div class="row ">
+                    <p class="titletext center" id="maintext">Streetlights, car headlights and indoor lights reflect skyward, causing a “sky
+                        glow” effect.</p>
+                </div>
+                <div class="drawing">
+                    <img src="img/drawing.png">
+                    <div class="lefttext">
+                        Unshielded fixtures emit light upwards as waste.
+                    </div>
+                    <div class="middletext">
+                        Other lights reflect off nearby surfaces.
+                    </div>
+                    <div class="righttext">
+                        LEDs are often several times<br>
+                        brighter, sending more light skyward.
+                    </div>
+                    </div>
+                <div class="row">
+                    <p class="titletext center sm-margin" id="maintext">And it's getting brighter all the time.</p>
+                </div>
+            </div>
+
+            <div class="scroll-container sm-margin">
+                <div class="background-item" id="item1">
+                    <div id="sliderMap" class="vert-center"></div>
+                </div>
+                <div class="foreground-item no-event">
+                    <div class="row">
+                        <div class="center background-transparent" id="start">
+                            <p class="no-margin">The growth of LED lights over the past decade has been a boon for energy efficiency. 
+                                However, they emit a blue-white color temperature that has increased light pollution considerably.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="center background-transparent" id="block1">
+                            <p class="no-margin">Other trends have also illuminated previously dark places.
+                                A boom in natural gas drilling lit swaths of the Bakken region of North Dakota,
+                                as well as other rural areas in Texas and Pennsylvania.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="center background-transparent" id="block2">
+                            <p class="no-margin">Population growth and automobile dependence often lead to urban sprawl, expanding
+                                urban light into former green space. The Houston metro area grew by over 15% between 2010 and 2020.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content">
+                <div class="row ">
+                    <p class="titletext center" id="maintext">This constant light is wreaking havoc on human and wildlife physiology.</p>
+                </div>
+            </div>
+
+            <div class="scroll-container sm-margin">
+                <div class="background-item">
+                    <img class="background" id="constAustin">
+                </div>
+                <div class="foreground-item">
+                    <div class="row">
+                        <div class="const-text center background-transparent" id="fade0">
+                                <p class="no-margin"></p>
+                        </div>
+                    </div> 
+                    <div class="row">
+                        <div class="const-text center background-transparent" id="fade1">
+                            <p class="no-margin">We rely on the release of melatonin to regulate the
+                                sleep-wake cycle, also known as the circadian rhythm.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="const-text center background-transparent" id="fade2">
+                            <p class="no-margin">Many animals rely on natural light sources for navigation.
+                                Baby sea turtles use moonlight to navigate to the ocean after hatching.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="const-text center background-transparent" id="fade3">
+                            <p class="no-margin">However, blue-white light blocks the release of melatonin, disrupting the circadian rhythm 
+                                and increasing our chance of developing heart disease, depression and breast cancer.
+                                Urban light lures sea turtles away from the sea, killing tens of thousands
+                                each year.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="row ">
+                    <p class="titletext center" id="maintext">As the number of places that experience dark skies dwindles, public awareness 
+                        of the value of darkness is growing.</p>
+                </div>
+            </div>
+        
+        <!--scrollytelling content to display above the final map, as well as html blocks to trigger IDA point data to appear on the map-->
+        <!--location of the map-->
+            <div class="scroll-container">
+                <div class="background-item" id="item1">
+                    <div id="finalMap" class="vert-center "></div>
+                </div>
+                <div class="foreground-item no-event">
+                    <div class="IDArow row"> 
+                        <div class="IDArow row">
+                            <div class="IDA-text center background-transparent" id="start">
+                                <p class="no-margin">The International Dark-Sky Association (IDA) 
+                                    works to protect these islands of darkness through their Dark Sky Places program.
+                                    Since its founding in 2001, the program has recognized over 130 places in North America for their
+                                    efforts to preserve night skies. The number of Dark Sky Places has increased rapidly over the past decade.</p>
+                            </div>
+                            <div class="IDArow row">
+                                 <!--div IDs correspond with data year values to trigger functions and conditionals in main.js-->
+                                <div class="IDA-points center background-transparent" id="2007">
+                                    <p class="no-margin"></p>
+                                </div>
+                            </div>
+                            <div class="IDArow row">
+                                <div class="IDA-points center background-transparent" id="2008">
+                                    <p class="no-margin"></p>
+                                </div>
+                            </div>
+                            <div class="IDArow row">
+                                <div class="IDA-points center background-transparent" id="2009">
+                                    <p class="no-margin"></p>
+                                </div>
+                            </div>
+                            <div class="IDArow row">
+                                <div class="IDA-points center background-transparent" id="2010">
+                                    <p class="no-margin"></p>
+                                </div>
+                            </div>
+                            <div class="IDArow row">
+                                <div class="IDA-points center background-transparent" id="2011">
+                                    <p class="no-margin"></p>
+                                </div>
+                            </div>
+                            <div class="IDArow row">
+                                <div class="IDA-points center background-transparent" id="2012">
+                                    <p class="no-margin"></p>
+                                </div>
+                            </div>
+                            <div class="IDArow row">
+                                <div class="IDA-points center background-transparent" id="2013">
+                                    <p class="no-margin"></p>
+                                </div>
+                            </div>
+                            <div class="IDArow row">
+                                <div class="IDA-points center background-transparent" id="2014">
+                                    <p class="no-margin"></p>
+                                </div>
+                            </div>
+                            <div class="IDArow row">
+                                <div class="IDA-points center background-transparent" id="2015">
+                                    <p class="no-margin"></p>
+                                </div>
+                            </div>
+                            <div class="IDArow row">
+                                <div class="IDA-points center background-transparent" id="2016">
+                                    <p class="no-margin"></p>
+                                </div>
+                            </div>
+                            <div class="IDArow row">
+                                <div class="IDA-points center background-transparent" id="2017">
+                                    <p class="no-margin"></p>
+                                </div>
+                            </div>
+                            <div class="IDArow row">
+                                <div class="IDA-points center background-transparent" id="2018">
+                                    <p class="no-margin"></p>
+                                </div>
+                            </div>
+                            <div class="IDArow row">
+                                <div class="IDA-points center background-transparent" id="2019">
+                                    <p class="no-margin"></p>
+                                </div>
+                            </div>
+                            <div class="IDArow row">
+                                <div class="IDA-points center background-transparent" id="2020">
+                                    <p class="no-margin"></p>
+                                </div>
+                            </div>
+                            <div class="IDArow row">
+                                <div class="IDA-points center background-transparent" id="2021">
+                                    <p class="no-margin"></p>
+                                </div>
+                            </div>
+                            <div class="IDArow row">
+                                <div class="IDA-points center background-transparent" id="2022">
+                                    <p class="no-margin"></p>
+                                </div>
+                            </div>
+                            <div class="IDA-text IDA-text-idaho center background-transparent" id="parks">
+                                <p class="no-margin"><img src="img/idaho.png" id="idaho">
+                                <p class="no-margin">The program has spurred
+                                    policies that reduce light pollution from small parks like the nearly 2-square-mile Geauga
+                                    Observatory Park on the outskirts of Cleveland to a 1,400-square-mile reserve in central Idaho.</p>
+                                <p class="idaho-attribution"><i>Stanley Lake in the Central Idaho Dark Sky Reserve</i></p>
+                            </div>
+                            <div class="IDArow row">
+                                <div class="IDA-text IDA-text-flagstaff center background-transparent" id="communities">
+                                    <p class="no-margin"><img src="img/flagstaff.jpg" id="flagstaff">
+                                        Flagstaff, Arizona became the IDA’s first Dark Sky City in 2001. It enforces outdoor lighting regulations
+                                        and fines property owners for careless light pollution. A city ordinance states:<br>
+                                        <strong>"Dark starry nights, like natural landscapes,
+                                                forests, clean water, wildlife, and clear unpolluted air, are valued in many
+                                                ways by the residents of this community."</strong></p>
+                                    <p class="flagstaff-attribution"><i>Humphreys Peak looms over the city of Flagstaff, AZ</i></p>
+                                </div>
+                                <div class="IDA-text IDA-text-unsp center background-transparent" id="unsps">
+                                    <p class="no-margin"><img src="img/unsp.jpg" id="unsp">
+                                    <p class="no-margin">Dark Sky parks, sanctuaries and reserves tend to be in remote locales
+                                        far from most of the country's inhabitants.
+                                        In 2019, the IDA began recognizing Urban Night Sky Places—spots in urban areas that are
+                                        managed to maintain night skies in the midst of significant artificial light.</p>
+                                    <p class="unsp-attribution"><i>Valle de Oro National Wildlife Refuge on the outskirts of Albequerque, NM</i></p>
+                                </div>
+                                <div class="IDArow row">
+                                    <div class="IDA-text IDA-text-end center background-transparent" id="end">
+                                        <p class="no-margin">Select a point to learn more about the Dark Sky Place.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="center" id="sources">
+                    <p class="vert-center" id="credits">Maps, Graphics, Text, Code</p>
+                    <p class="vert-center" id="names">Aileen Clarke<br>Austin Novak<br>Jake Steinberg</p>
+                    <br>
+                    <p class="vert-center" id="credits">Sources</p>
+                    <a href="http://djlorenz.github.io/astronomy/lp2020/" target="_blank">Light Pollution Atlas</a><br> 
+                    <a href="https://earthdata.nasa.gov/earth-observation-data/near-real-time/download-nrt-data/viirs-nrt" target="_blank">NASA</a><br>
+                    <a href="https://eogdata.mines.edu/products/vnl/" target="_blank">Earth Observation Group</a><br>                    
+                    <a href="https://www.science.org/doi/10.1126/sciadv.1600377" target="_blank">ScienceAdvances</a><br>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/23910656/" target="_blank">NIH National Library of Medicine</a><br>
+                    <a href="https://www.health.harvard.edu/staying-healthy/blue-light-has-a-dark-side" target="_blank">Harvard Medical School</a><br>
+                    <a href="https://f50006a.eos-intl.net/ELIBSQL12_F50006A_Documents/TR-2Rev2.pdf" target="_blank">Florida Fish and Wildlife Research Institute</a><br>
+                    <a href="https://www.darksky.org/our-work/conservation/idsp/" target="_blank">International Dark-Sky Association</a><br>
+                    <a href="https://www.flagstaff.az.gov/4042/International-Dark-Sky" target="_blank">City of Flagstaff</a><br>
+                    <a href="https://www.darksky.org/wp-content/uploads/2018/01/Flagstaff_Lighting_Code_2011.pdf" target="_blank">Flagstaff Zoning Code</a><br>
+                </div>
+            </div>
+        </div>
+                       
+        <!--external script links-->      
+          
+        <script type="text/javascript" src="dist/scrollmap.js"></script>
+        <script type="text/javascript" src="js/dark-skies-main.js"></script>
+        <script type="text/javascript" src="lib/leaflet/leaflet.js"></script>
+        <script type="text/javascript" src="lib/leaflet-side-by-side-2.0.0/leaflet-side-by-side.js"></script>
+        <script type="text/javascript" src="dist/leaflet.zoomhome.min.js"></script>
+    
+    </body>
+</html>
