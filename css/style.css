@@ -11,9 +11,11 @@ a.navbar-brand{
     font-weight: 500;   
 }
 
+
 a{
     color:teal
 }
+
 
 .navbar-nav>li>a{
     color:teal;
