@@ -152,6 +152,15 @@ li>p{
     backface-visibility: hidden;
 }
 
+.img-mapbox-inspo{
+    margin: auto;
+    opacity: 1;
+    display: block;
+    width: 250px;
+    height: 250px;
+    backface-visibility: hidden;
+}
+
 .foot{
     margin:auto;
     padding-left: 50px;
