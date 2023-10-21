@@ -120,12 +120,15 @@ li>p{
     background-color:teal;
     opacity: .8;
     color: white;
-    font-size: 18px;
+    font-size: 1.2em;
     padding: 16px 32px;
+    text-align: center;
+    position:relative
   }
 
   .project{
     color:teal;
+    position: relative;
 }
 
   .tools{
