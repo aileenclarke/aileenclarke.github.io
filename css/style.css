@@ -5,8 +5,8 @@ body{font-family: 'Fira Sans', sans-serif;
 head{font-family: 'Fira Sans', sans-serif;
 }
 
-.subhead {
-   color:teal;
+p .subhead {
+    text-align: center;
     font-weight: 500;  
     font-size: 18px;
 }
