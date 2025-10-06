@@ -96,7 +96,8 @@ li>p{
     display: block;
     transition: .5s ease;
     backface-visibility: hidden;
-    
+    width: 400px;
+    height: auto;
 }
 
 .portfolio-item:hover .img-responsive{
