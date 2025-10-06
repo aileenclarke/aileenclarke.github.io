@@ -44,8 +44,9 @@ li.active{
     color:teal;   
 }
 
-.section.subhead {
-    padding-left: 15px
+.subhead {
+    padding-left: 15px;
+    color:teal;   
 }
 
 .date{
